@@ -1,0 +1,9 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "slf4j-api.jar",
+        "slf4j-simple.jar",
+        "sqlite-jdbc.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}
