@@ -97,8 +97,9 @@ public class UniversityDatabase {
                     } catch (IOException ioe) {
                         ioe.printStackTrace();
                     }
+                    break;
 
-                    // Assuming tax amount is 10%, print tax amount for each instructor
+                // Assuming tax amount is 10%, print tax amount for each instructor
                 case 2:
                     String query2 = "SELECT ID, name, salary, salary*0.1 from instructor";
                     ResultSet rs = stmt.executeQuery(query2);
@@ -111,8 +112,9 @@ public class UniversityDatabase {
 
                         System.out.println(result);
                     }
+                    break;
 
-                    // Print student get highest grade for each semester
+                // Print student get highest grade for each semester
                 case 3:
                     // Min grade as the grade is sorted alphabetically
                     String query3 = "SELECT takes.ID, student.name, takes.semester, MIN(takes.grade) ";
@@ -130,8 +132,9 @@ public class UniversityDatabase {
 
                         System.out.println(result3);
                     }
+                    break;
 
-                    // Insert a new student
+                // Insert a new student
                 case 4:
                     String name, dept_name;
                     int id = 0;
@@ -157,8 +160,9 @@ public class UniversityDatabase {
                     query4 += "values(\"" + id + "\",\"" + name + "\",\"" + dept_name + "\")";
                     stmt.executeUpdate(query4);
                     System.out.println("INSERT SUCCESSFULLY");
+                    break;
 
-                    // Delete an existed student
+                // Delete an existed student
                 case 5:
                     String deleteName;
 
@@ -172,8 +176,9 @@ public class UniversityDatabase {
                     query5 += "where name = \"" + deleteName + "\"";
                     stmt.executeUpdate(query5);
                     System.out.println("DELETE SUCCESSFULLY");
+                    break;
 
-                    // Insert a new instructor
+                // Insert a new instructor
                 case 6:
                     String in_name, in_dept_name;
                     int i_id = 0;
@@ -199,8 +204,9 @@ public class UniversityDatabase {
                     query6 += "values(\"" + i_id + "\",\"" + in_name + "\",\"" + in_dept_name + "\")";
                     stmt.executeUpdate(query6);
                     System.out.println("INSERT SUCCESSFULLY");
+                    break;
 
-                    // Delete an existed instructor
+                // Delete an existed instructor
                 case 7:
                     String deleteInstructorName;
 
@@ -214,8 +220,9 @@ public class UniversityDatabase {
                     query7 += "where name = \"" + deleteInstructorName + "\"";
                     stmt.executeUpdate(query7);
                     System.out.println("DELETE SUCCESSFULLY");
+                    break;
 
-                    // Change a department of student
+                // Change a department of student
                 case 8:
                     String updateDept, s_name;
 
@@ -232,6 +239,8 @@ public class UniversityDatabase {
                     query8 += "set dept_name = \"" + updateDept + "\" where name = \"" + s_name + "\"";
                     stmt.executeUpdate(query8);
                     System.out.println("CHANGE SUCCESSFULLY");
+                    break;
+
                 default:
                     break;
             }
